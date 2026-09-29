@@ -1,0 +1,299 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #e9f1ff;
+  font-family: Georgia, serif;
+  background: #071426;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("O.gif") center / cover no-repeat;
+  opacity: 0.22;
+  z-index: -1;
+}
+
+main, .scene {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.scene {
+  width: min(100%, 850px);
+  display: grid;
+  place-items: center;
+}
+
+.cover {
+  grid-area: 1 / 1;
+  width: 100%;
+  padding: 40px 32px;
+  text-align: center;
+  border: 1px solid rgba(157, 198, 243, 0.35);
+  border-radius: 18px;
+  background: rgba(16, 33, 57, 0.68);
+  box-sizing: border-box;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 0 30px rgba(157, 198, 243, 0.04);
+  backdrop-filter: blur(5px);
+}
+
+.cover-gif {
+  display: block;
+  width: 200px;
+  max-height: 160px;
+  margin: 30px auto 5px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+.letter {
+  grid-area: 1 / 1;
+  text-align: center;
+}
+
+.letter { visibility: hidden; opacity: 0; 
+}
+
+h1 {
+  font-size: clamp(1.6rem, 7vw, 3rem);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 21ch;
+  max-width: 100%;
+  margin: 25px auto;
+  box-sizing: border-box;
+  border-right: 3px solid #9dc6f3;
+  animation:
+    typing 3s steps(21, end) forwards,
+    blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 21ch;
+  }
+}
+
+.eyebrow { color: #a8c7eb; letter-spacing: 3px; text-transform: uppercase; }
+
+.open-label, .back {
+  display: inline-block;
+  padding: 14px 24px;
+  border: 1px solid #9dc6f3;
+  border-radius: 30px;
+  color: #e9f1ff;
+  background: linear-gradient(135deg, #18365b, #244b78);
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.open-label:hover,
+.back:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #244b78, #315f91);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.letter-photo {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin: 0 auto 24px;
+  border: 2px solid #315477;
+  border-radius: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+#bgMusic {
+  display: none !important;
+}
+
+@keyframes swayFlower {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+.paper {
+  position: relative;
+  padding: 36px;
+  border: 1px solid rgba(157, 198, 243, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    #142a46,
+    #0e1e33
+  );
+  text-align: left;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.4),
+    inset 0 0 25px rgba(255, 255, 255, 0.02);
+}
+
+.paper h2 {
+  font-family: "Segoe Script", cursive;
+  color: #e9f1ff;
+  font-size: 25px;
+  margin-bottom: 24px;
+}
+
+.paper p {
+  font-family: "Segoe Print", "Bradley Hand", cursive;
+  color: #d3deee;
+  line-height: 1.8;
+  font-size: 15px;
+}
+.signature {
+  margin-top: 30px;
+  color: #c2d8f5;
+  font-family: "Segoe Script", "Brush Script MT", cursive;
+  font-size: 25px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+.closing {
+    grid-area: 1 / 1;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+   box-sizing: border-box;
+}
+
+.closing-gif {
+    display: block;
+    width: 800px;
+    max-width: 85vw;
+    margin: 0 auto 25px;
+    border: 2px solid rgba(157, 198, 243, 0.6);
+    border-radius: 25px;
+    box-shadow:
+        0 0 20px rgba(157, 198, 243, 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    animation:
+        closingFloat 3s ease-in-out infinite,
+        closingGlow 2.5s ease-in-out infinite alternate;
+}
+@keyframes closingGlow {
+    from {
+        filter: drop-shadow(0 0 5px rgba(157, 198, 243, 0.2));
+    }
+    to {
+        filter: drop-shadow(0 0 18px rgba(157, 198, 243, 0.6));
+    }
+}
+.closing-message {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.closing-main {
+    margin: 20px 0 10px;
+    color: #e9f1ff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifl;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow:
+        0 0 10px rgba(157, 198, 243, 0.35),
+        0 2px 12px rgba(0, 0, 0, 0.4);
+}
+.closing-sub {
+    margin: 0 auto;
+    max-width: 650px;
+    color: #b8cce5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifl;
+    font-size: 16px;
+    font-style: italic;
+}
+.switch {
+  position: absolute;
+  opacity: 0;
+}
+#open-letter:checked ~ .scene .cover {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#open-letter:checked ~ .scene .letter {
+    visibility: visible;
+    opacity: 1;
+}
+
+#open-letter:checked ~ #close-letter:checked ~ .scene .letter {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#open-letter:checked ~ #close-letter:checked ~ .scene .closing {
+    visibility: visible;
+    opacity: 1;
+}
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    border: 1px solid #9dc6f3;
+    border-radius: 20px;
+    color: #e9f1ff;
+    background: #18365b;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.home-button:hover {
+    background: #244b78;
+    border-color: #b8d8f5;
+    transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  body {
+    padding: 14px;
+  }
+  .cover {
+    padding: 30px 20px;
+  }
+  h1 {
+  font-size: 1.5rem;
+  width: 21ch;
+  max-width: 100%;
+}
+  }
+  .paper {
+    padding: 24px 20px;
+  }
+  .letter-photo {
+    height: 220px;
+  }
+  .paper p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
