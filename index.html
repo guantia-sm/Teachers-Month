@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teachers' Month</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+   <input class="switch" type="checkbox" id="open-letter">
+   <input class="switch" type="checkbox" id="close-letter">
+    <div class="scene">
+      <section class="cover">
+        <div class="eyebrow">A little something for you</div>
+        <h1>HAPPY TEACHERS' MONTH</h1><br><br>
+        <div class="envelope-wrap"><img class="cover-gif" src="panda.gif" alt="Animated cover image"></div>
+        <label class="open-label" for="open-letter">Open your letterᯓ➤</label>
+      </section>
+      <div class="letter">
+        <div class="paper">
+          <img class="letter-photo" src="teacher.jpg" alt="A picture for you">
+          <h2>Dear Ma'am Mari,</h2>
+          <p>Thank you for teaching us clearly about every lesson.</p>
+          <p>I always enjoy designing using HTML and CSS!</p>
+          <p>I think I've found what I want to do in this course, lol!</p>
+          <p>Thank you also for sharing tips that weren't even included in our lesson.</p>
+          <p>Thank you for being kind and considerate. I hope you continue to enjoy teaching students and 
+          inspire them to pursue what they really want to do.<br></p>
+          <p class="signature"><span>Guantia𑣲.</span></p>
+          <label class="back" for="close-letter">Fold the letter</label>
+        </div>
+      </div>
+         <div class="closing">
+        <img class="closing-gif" src="closing.gif" alt="Closing animation">
+      <div class="closing-message">
+    <p class="closing-main">
+        Thank you for reading my message, Ma'am!</p>
+    <p class="closing-sub">Wishing you happiness and many more wonderful moments with your students.</p>
+    <br><br><br>
+    <a href="" class="home-button">Back to the cover</a>
+</div>
+    </div>
+    </div>
+<div class="music-player">
+  <audio id="bgMusic" loop controls>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+</div>
+<script>
+  const music = document.getElementById("bgMusic");
+  const openLetter = document.getElementById("open-letter");
+
+  openLetter.addEventListener("change", function () {
+    if (this.checked) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  });
+</script>
+  </main>
+</body>
+</html>
+
+
+
+
